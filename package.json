@@ -1,0 +1,76 @@
+{
+  "name": "distpkg",
+  "version": "0.0.1",
+  "description": "A tool for creating dist packages",
+  "homepage": "https://github.com/refinist/distpkg#readme",
+  "bugs": {
+    "url": "https://github.com/refinist/distpkg/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/refinist/distpkg.git"
+  },
+  "license": "MIT",
+  "author": "Jeff Wang <refinistdev@gmail.com>",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./run": "./dist/run.mjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "bin": {
+    "distpkg": "./dist/run.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "build:distpkg": "npm run build && npm run distpkg",
+    "dev": "tsx ./src/run.ts",
+    "distpkg": "node dist/run.js",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "release": "bumpp && pnpm publish",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@refinist/prettier-config",
+  "dependencies": {
+    "ansis": "^4.1.0",
+    "c12": "^3.2.0",
+    "cac": "^6.7.14",
+    "empathic": "^2.0.0"
+  },
+  "devDependencies": {
+    "@refinist/eslint-config": "^1.0.4",
+    "@refinist/prettier-config": "^0.0.4",
+    "@types/node": "^22.15.17",
+    "bumpp": "^10.1.0",
+    "eslint": "^9.33.0",
+    "pkg-types": "^2.2.0",
+    "prettier": "^3.6.2",
+    "publint": "^0.3.12",
+    "tsdown": "^0.14.1",
+    "tsx": "^4.20.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.3"
+  },
+  "packageManager": "pnpm@10.14.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
