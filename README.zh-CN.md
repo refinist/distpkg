@@ -1,26 +1,26 @@
 # distpkg
 
-A post-build tool for projects (commonly used after bundling with bun/node into single files), generates streamlined package.json in dist directory, ensuring code executes correctly through a secondary install in the dist directory.
+一个项目构建后的工具（一般用于 bun / node 打包成单文件后使用），在 dist 目录中生成精简的 package.json，在 dist 目录下通过再一次的 install 确保代码可以执行正确
 
-[中文文档](./README.zh-CN.md)
+[English Document](./README.md)
 
-## Why do we need to install again?
+## 为什么需要在 install 一次？
 
-Because some packages may depend on the current environment, we extract these packages separately, such as foo, and put them in the dependencies of dist/package.json. This way, through a secondary install in the dist directory, we can ensure the code executes correctly!
+因为可能存在部分的包依赖了当下的环境，我们把这些包单独拿出来，比如 foo，放在 dist/package.json 的 dependencies 中，这样在 dist 目录下通过再一次的 install 就可以确保代码执行正确！
 
-## Why bundle? 🤨
+## 为什么要打包？🤨
 
-[Why bundle?](https://bun.sh/docs/bundler#why-bundle), let's read this article together
+[Why bundle?](https://bun.sh/docs/bundler#why-bundle)，让我们一起阅读这篇文章
 
-## Features
+## 特性
 
-- 🚀 **Fast and Simple**: Quickly generate dist/package.json
-- 📦 **Flexible Configuration**: Support both CLI options and config files
-- 🔧 **Customizable**: Choose which package.json fields to include
-- 🌟 **TypeScript Support**: Full TypeScript support with type definitions
-- 📝 **Auto Sorting**: Automatically sort package.json fields, perfect for OCD 😂
+- 🚀 **快速简单**: 快速生成 dist/package.json
+- 📦 **灵活配置**: 支持命令行选项和配置文件
+- 🔧 **可定制**: 选择要包含的 package.json 字段
+- 🌟 **TypeScript 支持**: 完整的 TypeScript 支持和类型定义
+- 📝 **自动排序**: 自动排序 package.json 字段，适合强迫症 😂
 
-## Installation
+## 安装
 
 ```bash
 
@@ -37,11 +37,11 @@ npm install -D distpkg
 yarn add -D distpkg
 ```
 
-## Quick Start
+## 快速开始
 
-### Basic Usage (Only 2 Steps)
+### 基本用法 (只需两步)
 
-1. Configure scripts in package.json
+1. 配置 package.json 中的 scripts
 
 ```json
 {
@@ -52,7 +52,7 @@ yarn add -D distpkg
 }
 ```
 
-2. Configure distpkg.config.ts
+2. 配置 distpkg.config.ts
 
 ```typescript
 // distpkg.config.ts
@@ -68,7 +68,7 @@ export default defineConfig({
 });
 ```
 
-### Programmatic Usage
+### 编程方式使用
 
 ```typescript
 import { build } from 'distpkg';
@@ -83,7 +83,7 @@ if (!result.success) {
 }
 ```
 
-## CLI Options
+## 命令行选项
 
 ```
 Usage:

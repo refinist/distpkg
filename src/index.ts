@@ -1,6 +1,8 @@
-export {
-  defineConfig,
-  type Options,
-  type UserConfig,
-  type UserConfigFn
-} from './config';
+export type {
+  Options,
+  CliOptions,
+  UserConfig,
+  UserConfigFn
+} from './utils/types';
+export { build } from './build';
+export { defineConfig } from './config';

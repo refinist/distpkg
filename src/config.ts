@@ -1,43 +1,7 @@
 import { loadConfig } from 'c12';
-import type { PackageJson } from 'pkg-types';
-import { readPackageJson } from './utils/package';
-import type { Awaitable } from './utils/types';
+import { defaultConfig } from './utils/default-config';
 
-/**
- * Options for distpkg
- */
-export interface Options {
-  /**
-   * The config file
-   */
-  config?: string;
-
-  /**
-   * @default 'dist'
-   */
-  outDir?: string;
-
-  /**
-   * current working directory
-   *
-   * @default process.cwd()
-   */
-  cwd?: string;
-
-  /**
-   * dist/package.json content
-   *
-   * Defaults to `name`, `version`, and `private` from the current package.json
-   */
-  packageJson?: PackageJson;
-}
-
-export type CliOptions = Omit<Options, 'packageJson'>;
-
-export type UserConfig = Omit<Options, 'config'>;
-
-export type UserConfigFn = (options: Options) => Awaitable<UserConfig>;
-
+import type { UserConfig, UserConfigFn, CliOptions } from './utils/types';
 /**
  * user input config
  */
@@ -49,35 +13,38 @@ export function defineConfig(
   return options;
 }
 
-/**
- * default config
- */
-const CWD = process.cwd();
-const defaultConfig = async (): Promise<UserConfig> => {
-  const packageJson = await readPackageJson(CWD);
-  return {
-    outDir: 'dist',
-    cwd: CWD,
-    packageJson: {
-      name: packageJson?.name,
-      version: packageJson?.version,
-      private: packageJson?.private
-    }
-  };
-};
-
 export async function loadUserConfig(
-  overrides?: Partial<UserConfig>,
-  configFile?: string,
-  cwd: string = CWD
+  cliOptions: CliOptions
 ): Promise<UserConfig> {
-  const defaults = await defaultConfig();
-  const result = await loadConfig<UserConfig>({
+  const defaults = defaultConfig();
+
+  const { config: configFile, ...overrides } = cliOptions;
+  const { config } = await loadConfig<UserConfig>({
+    cwd: cliOptions.cwd,
     name: 'distpkg',
+    context: JSON.parse(JSON.stringify(cliOptions)),
     configFile,
     defaults,
-    overrides,
-    cwd
+    overrides
+
+    // merger: (...rest) => {
+    //   // Do not use the default deep merge method
+    //   // Merge in reverse order to ensure later items override earlier ones
+    //   let obj = {};
+    //   for (const item of rest.reverse()) {
+    //     if (item) {
+    //       // Filter out undefined and null values to ensure the merged object does not contain them
+    //       const filteredItem = Object.fromEntries(
+    //         Object.entries(item).filter(
+    //           ([, value]) => value !== null && value !== undefined
+    //         )
+    //       );
+    //       obj = { ...obj, ...filteredItem };
+    //     }
+    //   }
+    //   return obj;
+    // },
   });
-  return result.config;
+
+  return config;
 }
