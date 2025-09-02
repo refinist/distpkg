@@ -9,5 +9,6 @@ export default defineConfig({
     ignore: ['typescript']
   },
   publint: true,
-  fixedExtension: true
+  fixedExtension: true,
+  minify: true
 });
