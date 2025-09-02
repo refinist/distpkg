@@ -1,7 +1,23 @@
 {
   "name": "distpkg",
   "version": "0.0.2",
-  "description": "A tool for creating dist packages",
+  "description": "Post-build tool for generating minimal package.json in dist directory",
+  "keywords": [
+    "dist",
+    "package.json",
+    "post-build",
+    "bun",
+    "node",
+    "bundler",
+    "dependencies",
+    "build-tool",
+    "deployment",
+    "docker",
+    "optimization",
+    "secondary-install",
+    "cli",
+    "typescript"
+  ],
   "homepage": "https://github.com/refinist/distpkg#readme",
   "bugs": {
     "url": "https://github.com/refinist/distpkg/issues"
