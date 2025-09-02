@@ -1,6 +1,6 @@
 {
   "name": "distpkg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tool for creating dist packages",
   "homepage": "https://github.com/refinist/distpkg#readme",
   "bugs": {
