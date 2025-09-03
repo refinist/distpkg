@@ -13,7 +13,7 @@
 
 ## 为什么需要在 install 一次？
 
-因为可能存在某些包依赖了当下的环境，或者某些包在 runtime 时才会判断要去加载它依赖的包（这些包可能被直接安装到 `node_modules/some-package` 中）。我们需要把这些包单独拿出来。比如 foo，放在 dist/package.json 的 dependencies 中，这样在 dist 目录下通过再一次的 install 就可以确保代码执行正确！
+因为可能存在某些包依赖了当下的环境，或者某些包在 runtime 时才会判断要去加载它依赖的包（这些包可能被直接安装到 `node_modules/some-package` 中）。所以我们需要把这些“特殊”的包单独拿出来。比如 foo，放在 dist/package.json 的 dependencies 中，这样在 dist 目录下通过再一次的 install 就可以确保代码执行正确！
 
 ## 为什么要打包？🤨
 
