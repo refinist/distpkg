@@ -11,7 +11,6 @@ export async function createDistPkg(config?: UserConfig): Promise<{
   let { cwd, outDir, packageJson, packageKeys, sort } =
     config as Required<UserConfig>;
 
-  // 检查输出目录是否存在
   const outputPath = path.join(cwd, outDir);
 
   // Process packageJson using the latest merged packageKeys
