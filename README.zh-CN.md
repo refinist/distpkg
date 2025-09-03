@@ -69,11 +69,6 @@ import { defineConfig } from 'distpkg';
 
 export default defineConfig({
   packageJson: {
-    name: 'your-project-name',
-    version: '1.0.0',
-    description: 'your-project-description',
-    private: true,
-    type: 'module',
     dependencies: {
       foo: '^1.0.0'
       /* more dependencies */
