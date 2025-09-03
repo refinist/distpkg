@@ -13,7 +13,7 @@ A tool for post-build projects (generally used after bundling into a single file
 
 ## Why do we need to install again?
 
-Because some packages may depend on the current environment, we extract these packages separately, such as foo, and put them in the dependencies of dist/package.json. This way, through a secondary install in the dist directory, we can ensure the code executes correctly!
+Because some packages may depend on the current environment, or some packages may only determine at runtime that they need to load their dependencies (which might be installed directly in `node_modules/some-package`). Therefore, we need to extract these "special" packages separately. For example, put foo in the dependencies of dist/package.json, so that by running install again in the dist directory, we can ensure the code executes correctly!
 
 ## Why bundle? 🤨
 

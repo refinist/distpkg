@@ -1,7 +1,7 @@
 {
   "name": "distpkg",
   "version": "0.0.3",
-  "description": "Post-build tool for generating minimal package.json in dist directory",
+  "description": "Post-build tool that generates minimal package.json in dist/ and re-installs deps to ensure bundled code runs correctly",
   "keywords": [
     "dist",
     "package.json",
