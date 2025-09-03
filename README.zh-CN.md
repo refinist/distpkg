@@ -1,11 +1,15 @@
-# distpkg
+<h1 align="center">distpkg</h1>
 
-[![npm](https://img.shields.io/npm/v/distpkg.svg?colorA=f9f0e1&colorB=000000)](https://npmjs.com/package/distpkg) [![Unit Test](https://img.shields.io/github/actions/workflow/status/refinist/distpkg/unit-test.yml?colorA=f9f0e1&colorB=000000&label=Unit%20Test)](https://github.com/refinist/distpkg/actions/workflows/unit-test.yml) [![codecov](https://img.shields.io/codecov/c/github/refinist/distpkg?colorA=f9f0e1&colorB=000000)](https://codecov.io/github/refinist/distpkg)
+<p align="center"><a href="./README.md" target="_blank">English Document</a></p>
 
-一个项目构建后的工具（一般用于
-<img src="https://private-user-images.githubusercontent.com/6010774/382552750-50282090-adfd-4ddb-9e27-c30753c6b161.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTY4MTAxNTAsIm5iZiI6MTc1NjgwOTg1MCwicGF0aCI6Ii82MDEwNzc0LzM4MjU1Mjc1MC01MDI4MjA5MC1hZGZkLTRkZGItOWUyNy1jMzA3NTNjNmIxNjEucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDkwMiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA5MDJUMTA0NDEwWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ZjAzZjU5ODg5N2YxZWE1MmY4MDk4MzJjNGUyZGFmY2EzYWM3ODVlZDlhYjg1MjgwZjY4ZDRkZDc2NDFiOTRhMyZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.9HulMQMBjn2ri7MM2quH_2_DPZuRmH-eFKcKmnl0oX4" width="18" style="vertical-align: middle;" />(bun) 或者 node 等，打包成单文件后使用），在 dist 目录中生成精简的 package.json，在 dist 目录下通过再一次的 install 确保代码可以执行正确
+<p align="center">
+<a href="https://npmjs.com/package/distpkg" target="_blank"><img src="https://img.shields.io/npm/v/distpkg.svg?colorA=f9f0e1&colorB=000000" /></a> <a href="https://github.com/refinist/distpkg/actions/workflows/unit-test.yml" target="_blank"><img src="https://img.shields.io/github/actions/workflow/status/refinist/distpkg/unit-test.yml?colorA=f9f0e1&colorB=000000&label=Unit%20Test" /></a> <a href="https://codecov.io/github/refinist/distpkg" target="_blank"><img src="https://img.shields.io/codecov/c/github/refinist/distpkg?colorA=f9f0e1&colorB=000000" /></a>
 
-[English Document](./README.md)
+</p>
+
+一个项目构建后的工具（一般用于<img src="https://github.com/user-attachments/assets/50282090-adfd-4ddb-9e27-c30753c6b161" alt="Bun" width=18 style="vertical-align: middle;" />(bun) 或者 node 等，打包成单文件后使用），在 dist 目录中生成精简的 package.json，然后在 dist 目录下通过再一次的 install 确保最终的代码可以执行正确
+
+<p><img src="./legend.png" alt="Legend" width="100%" style="border-radius: 12px;"/></p>
 
 ## 为什么需要在 install 一次？
 
@@ -21,9 +25,9 @@
 - 📦 **灵活配置**: 支持命令行选项和配置文件
 - 🔧 **可定制**: 选择要包含的 package.json 字段
 - 🌟 **TypeScript 支持**: 完整的 TypeScript 支持和类型定义
-- 📝 **自动排序**: 自动排序 package.json 字段，适合强迫症 😂
+- 📝 **自动排序**: 自动排序 package.json 字段，适合强迫症
 - ✅ **100% 测试覆盖率**: 项目稳定可靠，质量有保障
-- <img src="https://private-user-images.githubusercontent.com/6010774/382552750-50282090-adfd-4ddb-9e27-c30753c6b161.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTY4MTAxNTAsIm5iZiI6MTc1NjgwOTg1MCwicGF0aCI6Ii82MDEwNzc0LzM4MjU1Mjc1MC01MDI4MjA5MC1hZGZkLTRkZGItOWUyNy1jMzA3NTNjNmIxNjEucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDkwMiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA5MDJUMTA0NDEwWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ZjAzZjU5ODg5N2YxZWE1MmY4MDk4MzJjNGUyZGFmY2EzYWM3ODVlZDlhYjg1MjgwZjY4ZDRkZDc2NDFiOTRhMyZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.9HulMQMBjn2ri7MM2quH_2_DPZuRmH-eFKcKmnl0oX4" width="18" style="vertical-align: middle;" /> **Bun 完美适配**: 专为 Bun 单文件打包优化，无缝集成
+- <img src="https://github.com/user-attachments/assets/50282090-adfd-4ddb-9e27-c30753c6b161" alt="Bun" width=18 style="vertical-align: middle;" /> **Bun 完美适配**: 专为 Bun 单文件打包优化，无缝集成
 
 ## 安装
 
@@ -65,6 +69,11 @@ import { defineConfig } from 'distpkg';
 
 export default defineConfig({
   packageJson: {
+    name: 'your-project-name',
+    version: '1.0.0',
+    description: 'your-project-description',
+    private: true,
+    type: 'module',
     dependencies: {
       foo: '^1.0.0'
       /* more dependencies */
