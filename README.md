@@ -17,7 +17,7 @@ Because some packages may depend on the current environment, or some packages ma
 
 ## Why bundle? 🤨
 
-[Why bundle?](https://bun.sh/docs/bundler#why-bundle), let's read this article together
+[Why bundle?](https://bun.sh/docs/bundler#why-bundle) Let's read this article together. This is Bun's summary, and although it focuses more on frontend applications, in my opinion, bundling definitely brings benefits: 1. Easier to publish 2. Smaller package size 3. More convenient for handling obfuscation and similar logic.
 
 ## Features
 

@@ -17,7 +17,7 @@
 
 ## 为什么要打包？🤨
 
-[Why bundle?](https://bun.sh/docs/bundler#why-bundle)，让我们一起阅读这篇文章
+[Why bundle?](https://bun.sh/docs/bundler#why-bundle)，让我们一起阅读这篇文章。这是 Bun 的总结，虽然比较偏向于前端应用，但在我看来打包肯定会带来好处：1.容易发布 2.包体积小 3.更加方便的处理混淆等逻辑
 
 ## 特性
 
