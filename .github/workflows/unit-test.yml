@@ -3,9 +3,14 @@ name: Unit Test
 on:
   push:
     branches: [main]
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'pnpm-workspace.yaml'
+      - '.github/workflows/**'
+
   pull_request:
     branches: [main]
-
     paths:
       - 'src/**'
       - 'package.json'
