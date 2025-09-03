@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [main]
 
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'pnpm-workspace.yaml'
+      - '.github/workflows/**'
+
 jobs:
   test:
     runs-on: ubuntu-latest
