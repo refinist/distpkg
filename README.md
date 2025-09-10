@@ -4,7 +4,10 @@
 
 <p align="center">
 <a href="https://npmjs.com/package/distpkg" target="_blank"><img src="https://img.shields.io/npm/v/distpkg.svg?colorA=f9f0e1&colorB=000000" /></a> <a href="https://github.com/refinist/distpkg/actions/workflows/unit-test.yml" target="_blank"><img src="https://img.shields.io/github/actions/workflow/status/refinist/distpkg/unit-test.yml?colorA=f9f0e1&colorB=000000&label=Unit%20Test" /></a> <a href="https://codecov.io/github/refinist/distpkg" target="_blank"><img src="https://img.shields.io/codecov/c/github/refinist/distpkg?colorA=f9f0e1&colorB=000000" /></a>
+</p>
 
+<p align="center">
+<a href="https://deepwiki.com/refinist/distpkg" target="_blank"><img src="https://deepwiki.com/badge.svg" /></a>
 </p>
 
 A tool for post-build projects (generally used after bundling into a single file with <img src="https://github.com/user-attachments/assets/50282090-adfd-4ddb-9e27-c30753c6b161" alt="Bun" width=18 style="vertical-align: middle;" /> (bun) or node, etc.), which generates a minimal package.json in the dist directory. Then, by running install again in the dist directory, it ensures that the final code can execute correctly.
