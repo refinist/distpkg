@@ -71,20 +71,20 @@
   "devDependencies": {
     "@refinist/eslint-config": "^1.0.4",
     "@refinist/prettier-config": "^0.0.4",
-    "@types/node": "^22.18.0",
+    "@types/node": "^22.18.1",
     "@vitest/coverage-v8": "3.2.4",
     "bumpp": "^10.2.3",
-    "eslint": "^9.34.0",
+    "eslint": "^9.35.0",
     "pkg-types": "^2.3.0",
     "prettier": "^3.6.2",
     "publint": "^0.3.12",
-    "tsdown": "^0.14.2",
+    "tsdown": "^0.15.1",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
-    "unplugin-unused": "^0.5.2",
+    "unplugin-unused": "^0.5.3",
     "vitest": "^3.2.4"
   },
-  "packageManager": "pnpm@10.15.1",
+  "packageManager": "pnpm@10.16.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
