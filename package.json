@@ -74,7 +74,7 @@
     "@types/node": "^22.18.0",
     "@vitest/coverage-v8": "3.2.4",
     "bumpp": "^10.2.3",
-    "eslint": "^9.34.0",
+    "eslint": "^10.10.0",
     "pkg-types": "^2.3.0",
     "prettier": "^3.6.2",
     "publint": "^0.3.12",
