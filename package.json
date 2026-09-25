@@ -73,7 +73,7 @@
     "@refinist/prettier-config": "^0.0.4",
     "@types/node": "^22.18.0",
     "@vitest/coverage-v8": "3.2.4",
-    "bumpp": "^10.2.3",
+    "bumpp": "^12.3.0",
     "eslint": "^9.34.0",
     "pkg-types": "^2.3.0",
     "prettier": "^3.6.2",
