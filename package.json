@@ -64,7 +64,7 @@
   "prettier": "@refinist/prettier-config",
   "dependencies": {
     "c12": "^3.2.0",
-    "cac": "^6.7.14",
+    "cac": "^7.0.0",
     "empathic": "^2.0.0",
     "sort-package-json": "^3.4.0"
   },
